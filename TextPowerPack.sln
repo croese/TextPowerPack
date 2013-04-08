@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextPowerPack", "TextPowerPack\TextPowerPack.csproj", "{A8FD6B93-CD5A-49FD-9300-317E6447C231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextPowerPack.Tests", "TextPowerPack.Tests\TextPowerPack.Tests.csproj", "{519A7665-D71A-497B-A7F3-0D04B2FC7E72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F02053F-A302-477E-8AAE-997EF1325991}"
+	ProjectSection(SolutionItems) = preProject
+		README = README
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8FD6B93-CD5A-49FD-9300-317E6447C231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FD6B93-CD5A-49FD-9300-317E6447C231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FD6B93-CD5A-49FD-9300-317E6447C231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FD6B93-CD5A-49FD-9300-317E6447C231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{519A7665-D71A-497B-A7F3-0D04B2FC7E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519A7665-D71A-497B-A7F3-0D04B2FC7E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519A7665-D71A-497B-A7F3-0D04B2FC7E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519A7665-D71A-497B-A7F3-0D04B2FC7E72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
