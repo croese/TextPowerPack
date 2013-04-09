@@ -21,6 +21,9 @@ namespace TextPowerPack.FlatText.Exceptions
     public MissingFieldsException(IEnumerable<string> fieldsInError)
       : base(makeErrorMessage(fieldsInError))
     {
+      Contract.Requires(fieldsInError != null);
+      Contract.Requires(fieldsInError.Any(),
+        "The missing fields sequence may not be empty");
     }
 
     /// <summary>
@@ -30,10 +33,6 @@ namespace TextPowerPack.FlatText.Exceptions
     /// <returns>The error message</returns>
     private static string makeErrorMessage(IEnumerable<string> fieldsInError)
     {
-      Contract.Requires(fieldsInError != null);
-      Contract.Requires(fieldsInError.Any(), 
-        "The missing fields sequence may not be empty");
-
       return string.Format("Unable to find the following field(s): {0}{0}{1}",
         Environment.NewLine,
         fieldsInError.Select(f =>

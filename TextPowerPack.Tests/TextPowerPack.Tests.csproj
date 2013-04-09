@@ -59,6 +59,8 @@
     <Compile Include="FlatText\FormatterTests.cs" />
     <Compile Include="FlatText\FactoryTests.cs" />
     <Compile Include="FlatText\FixedWidthFlatTextWriterTests.cs" />
+    <Compile Include="FlatText\ExtensionMethodsTests.cs" />
+    <Compile Include="FlatText\AttributeSettingsProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FlatText\DelimitedFlatTextWriterTests.cs" />
   </ItemGroup>
