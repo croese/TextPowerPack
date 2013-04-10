@@ -125,6 +125,7 @@
     <Compile Include="FlatText\Concrete\PropertyFieldReader.cs" />
     <Compile Include="FlatText\Concrete\SimpleFieldFormatter.cs" />
     <Compile Include="FlatText\Concrete\SimpleRowFormatter.cs" />
+    <Compile Include="FlatText\Exceptions\FieldOverflowException.cs" />
     <Compile Include="FlatText\Exceptions\MissingFieldException.cs" />
     <Compile Include="FlatText\FlatTextWriterFactory.cs" />
     <Compile Include="FlatText\Interfaces\IFieldReader.cs" />

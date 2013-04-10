@@ -61,5 +61,11 @@ namespace TextPowerPack.FlatText.Common
     /// out to Width
     /// </summary>
     public char PaddingChar { get; set; }
+
+    /// <summary>
+    /// Signals whether an exception is thrown when a fixed-width value
+    /// overflows its width or whether it gets truncated to fit
+    /// </summary>
+    public bool ThrowOnOverflow { get; set; }
   }
 }

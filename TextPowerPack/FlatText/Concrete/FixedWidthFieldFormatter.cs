@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TextPowerPack.FlatText.Common;
+using TextPowerPack.FlatText.Exceptions;
 using TextPowerPack.FlatText.Interfaces;
 
 namespace TextPowerPack.FlatText.Concrete
@@ -41,6 +42,21 @@ namespace TextPowerPack.FlatText.Concrete
         formattedStr = this.Settings.Justification == FieldJustification.Left ?
           formattedStr.PadRight(this.Settings.Width, this.Settings.PaddingChar) :
           formattedStr.PadLeft(this.Settings.Width, this.Settings.PaddingChar);
+      }
+      else if (formattedStr.Length > this.Settings.Width)
+      {
+        // either we throw...
+        if (this.Settings.ThrowOnOverflow)
+        {
+          throw new FieldOverflowException(this.FieldInfo.Name, formattedStr, 
+            this.Settings.Width);
+        }
+        else // ...or we truncate
+        {
+          formattedStr = this.Settings.Justification == FieldJustification.Left ?
+            formattedStr.Substring(0, this.Settings.Width) :
+            formattedStr.Substring(formattedStr.Length - this.Settings.Width);
+        }
       }
 
       return formattedStr;

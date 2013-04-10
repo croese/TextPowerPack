@@ -175,7 +175,8 @@ namespace TextPowerPack.FlatText.Common
       Justification = FieldJustification.Right,
       Order = 0,
       PaddingChar = ' ',
-      Width = 0
+      Width = 0,
+      ThrowOnOverflow = true
     };
 
     /// <summary>
@@ -223,6 +224,22 @@ namespace TextPowerPack.FlatText.Common
       set
       {
         _fieldSettings.Width = value;
+      }
+    }
+
+    /// <summary>
+    /// Signals whether an exception is thrown when a fixed-width value
+    /// overflows its width or whether it gets truncated to fit
+    /// </summary>
+    protected bool throwOnOverflow
+    {
+      get
+      {
+        return _fieldSettings.ThrowOnOverflow;
+      }
+      set
+      {
+        _fieldSettings.ThrowOnOverflow = value;
       }
     }
 
@@ -359,6 +376,22 @@ namespace TextPowerPack.FlatText.Common
       set
       {
         width = value;
+      }
+    }
+
+    /// <summary>
+    /// Signals whether an exception is thrown when a fixed-width value
+    /// overflows its width or whether it gets truncated to fit
+    /// </summary>
+    protected bool ThrowOnOverflow
+    {
+      get
+      {
+        return throwOnOverflow;
+      }
+      set
+      {
+        throwOnOverflow = value;
       }
     }
 
