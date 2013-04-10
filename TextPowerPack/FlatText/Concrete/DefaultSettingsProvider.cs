@@ -46,6 +46,7 @@ namespace TextPowerPack.FlatText.Concrete
     public IFieldFormatter[] GetFieldFormatters(Type theType)
     {
       IFieldFormatter[] retVal = theType.GetProperties()
+                                        .Where(pi => pi.CanRead)
                                         .Select(pi =>
                                           new SimpleFieldFormatter(
                                             new PropertyFieldReader(pi), 

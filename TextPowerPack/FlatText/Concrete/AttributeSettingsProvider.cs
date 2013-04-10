@@ -62,19 +62,20 @@ namespace TextPowerPack.FlatText.Concrete
       var rowAttrib = theType.GetCustomAttributes(_attribType, true).OfType<TRowAttrib>().First();
       var fieldType = rowAttrib.FieldAttributeType;
 
-      // get the public properties tagged with the fild attrib type
+      // get the public properties tagged with the field attrib type
       // and project them to field formatters
-      var retVal = theType.GetProperties().Where(pi => pi.HasCustomAttribute(fieldType, true))
-                             .Select(pi =>
-                               {
-                                 var fieldAttrib = pi.GetCustomAttributes(fieldType, true)
-                                                     .OfType<FlatTextFieldAttribute>()
-                                                     .First();
+      var retVal = theType.GetProperties()
+                          .Where(pi => pi.CanRead && pi.HasCustomAttribute(fieldType, true))
+                          .Select(pi =>
+                            {
+                              var fieldAttrib = pi.GetCustomAttributes(fieldType, true)
+                                                  .OfType<FlatTextFieldAttribute>()
+                                                  .First();
 
-                                 return fieldAttrib.GetFieldFormatter(pi);
-                               })
-                               .OrderBy(ff => ff.Settings.Order)
-                               .ToArray();
+                              return fieldAttrib.GetFieldFormatter(pi);
+                            })
+                            .OrderBy(ff => ff.Settings.Order)
+                            .ToArray();
 
       return retVal;
     }

@@ -83,7 +83,7 @@ namespace TextPowerPack.FlatText.Concrete
     /// <returns>The collection of formatters</returns>
     private IFieldFormatter[] makeFieldFormatters(IDictionary<string, FieldSettings> fieldLookup)
     {
-      var props = _theType.GetProperties();
+      var props = _theType.GetProperties().Where(pi => pi.CanRead).ToArray();
 
       verifyFields(props, fieldLookup);
 

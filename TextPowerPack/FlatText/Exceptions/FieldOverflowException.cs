@@ -9,6 +9,7 @@ namespace TextPowerPack.FlatText.Exceptions
   /// <summary>
   /// Represents an error when a fixed-width field overflows its width
   /// </summary>
+  [Serializable]
   public class FieldOverflowException : Exception
   {
     /// <summary>

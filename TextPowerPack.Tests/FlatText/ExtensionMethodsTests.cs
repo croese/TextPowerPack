@@ -55,7 +55,8 @@ namespace TextPowerPack.Tests.FlatText
       // arrange - setup any data for the test here
 
       // act - call code under test here
-      var actual = typeof(MyClass).GetProperties().Where(x => x.HasCustomAttribute<MyAttrib>()).Count();
+      var actual = typeof(MyClass).GetProperties().Where(x => x.CanRead &&
+        x.HasCustomAttribute<MyAttrib>()).Count();
 
       // assert - assert the correct test results here
       Assert.AreEqual(1, actual);
