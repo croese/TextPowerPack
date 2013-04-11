@@ -21,6 +21,7 @@ namespace TextPowerPack.FlatText.Common
     public static bool HasCustomAttribute<TAttrib>(this MemberInfo mi, bool inherit = false)
       where TAttrib : Attribute
     {
+      Contract.Requires(mi != null);
       return HasCustomAttribute(mi, typeof(TAttrib), inherit);
     }
 
@@ -36,6 +37,8 @@ namespace TextPowerPack.FlatText.Common
     /// false otherwise</returns>
     public static bool HasCustomAttribute(this MemberInfo mi, Type attribType, bool inherit = false)
     {
+      Contract.Requires(mi != null);
+      Contract.Requires(attribType != null);
       return mi.GetCustomAttributes(attribType, inherit).Any();
     }
   }

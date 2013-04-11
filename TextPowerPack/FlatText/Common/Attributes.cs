@@ -383,7 +383,7 @@ namespace TextPowerPack.FlatText.Common
     /// Signals whether an exception is thrown when a fixed-width value
     /// overflows its width or whether it gets truncated to fit
     /// </summary>
-    protected bool ThrowOnOverflow
+    public bool ThrowOnOverflow
     {
       get
       {
